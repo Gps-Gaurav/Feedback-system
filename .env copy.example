@@ -1,0 +1,4 @@
+NEXTAUTH_SECRET="gps"
+MONGODB_URI="mongodb+srv://gpsgauravgps:8650093027@cluster0.zv86n.mongodb.net/"
+RESEND_API_KEY=
+OPENAI_API_KEY=
