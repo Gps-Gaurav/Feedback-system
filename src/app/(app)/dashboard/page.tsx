@@ -144,6 +144,9 @@ function UserDashboard() {
             type="text"
             value={profileUrl}
             disabled
+            aria-label="Your profile URL"
+            placeholder="Your profile URL"
+            title="Your profile URL"
             className="input input-bordered w-full p-2 mr-2"
           />
           <Button onClick={copyToClipboard}>Copy</Button>
@@ -181,7 +184,7 @@ function UserDashboard() {
         {messages.length > 0 ? (
           messages.map((message, index) => (
             <MessageCard
-              key={message._id}
+              key={message._id as string}
               message={message}
               onMessageDelete={handleDeleteMessage}
             />
