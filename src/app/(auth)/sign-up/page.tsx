@@ -22,6 +22,7 @@ import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/signUpSchema';
+import { signIn } from 'next-auth/react';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
@@ -171,6 +172,15 @@ export default function SignUpForm() {
                 'Sign Up'
               )}
             </Button>
+        <Button className='w-full flex items-center justify-center' onClick={() => signIn('google')}>
+          <svg className="w-5 h-5 mr-2" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.15 0 5.9 1.15 8.1 3.05l6-6C34.9 3.5 29.8 1.5 24 1.5 14.8 1.5 7.1 7.55 4.1 15.45l7.45 5.8C13.4 15.4 18.2 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.5 24c0-1.6-.15-3.15-.45-4.65H24v9.3h12.75c-.55 2.85-2.15 5.25-4.55 6.85l7.45 5.8C43.9 37.45 46.5 31.15 46.5 24z"/>
+          <path fill="#FBBC05" d="M7.55 28.55c-1.15-2.85-1.15-5.95 0-8.8L.1 13.95C-2.25 18.45-2.25 29.55.1 34.05l7.45-5.5z"/>
+          <path fill="#34A853" d="M24 46.5c5.8 0 10.9-1.95 14.55-5.3l-7.45-5.8c-2.15 1.45-4.85 2.3-7.1 2.3-5.8 0-10.75-3.95-12.55-9.3l-7.45 5.8C7.1 42.45 14.8 46.5 24 46.5z"/>
+          </svg>
+          Sign in with Google
+        </Button>
           </form>
         </Form>
         <div className="text-center mt-4">
