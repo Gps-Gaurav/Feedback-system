@@ -39,7 +39,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
         title: response.data.message,
         className: 'bg-green-50 border-green-200',
       });
-      onMessageDelete(message._id);
+      onMessageDelete(message._id as string);
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
@@ -66,7 +66,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
               </p>
               <div className="flex items-center mt-3 text-sm text-gray-500">
                 <Clock className="w-4 h-4 mr-1" />
-                <time dateTime={message.createdAt}>
+                <time dateTime={new Date(message.createdAt).toISOString()}>
                   {dayjs(message.createdAt).format('MMM D, YYYY h:mm A')}
                 </time>
               </div>
